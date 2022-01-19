@@ -1,0 +1,94 @@
+name: Website
+on:
+  push:
+    branches:
+      - "main"
+  pull_request: null
+jobs:
+  build-website:
+    # if: ${{ !endsWith(github.repository, '/styles') }}
+    runs-on: ubuntu-latest
+    env:
+      RSPM: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # defaults:
+    #   run:
+    #     shell: bash
+    steps:
+      - name: Checkout the lesson
+        uses: actions/checkout@v2
+        # with:
+        #   path: build
+        #   fetch-depth: 0
+
+      - name: Install sys deps
+        run: sudo apt-get install -y libcurl4-openssl-dev
+
+      - name: Setup Git
+        if: ${{ !env.ACT }}
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install GitHub Pages, Bundler, and kramdown gems
+        run: |
+          gem install github-pages bundler kramdown kramdown-parser-gfm
+
+      - name: Install Python modules
+        run: |
+          python3 -m pip install --upgrade pip setuptools wheel pyyaml==5.3.1 requests
+          python3 -m pip install -r requirements.txt
+
+      - name: Get the submodules using python
+        run: |
+          python bin/get_submodules.py
+
+      - name: Check for Rmd
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "./collections/_episodes_rmd"
+
+      - name: Setup Pandoc
+        if: steps.check_files.outputs.files_exists == 'true'
+        uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Setup R
+        if: steps.check_files.outputs.files_exists == 'true'
+        uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: 'release'
+
+      - name: Setup Renv
+        if: steps.check_files.outputs.files_exists == 'true'
+        uses: r-lib/actions/setup-renv@v2
+
+      - name: Render R markdown
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: |
+          RMD_PATH=$(find ./collections/_episodes_rmd -name '*.Rmd')
+          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, knit_root_dir=getwd(), output_dir=dirname(sub("./collections/_episodes_rmd/", "./collections/_episodes/", f)))' ${RMD_PATH[*]}
+          git add ./collections/_episodes/**/*.md ./collections/_episodes/**/*.html
+          git commit ./collections/_episodes/**/*.md ./collections/_episodes/**/*.html -m 'Re-build Rmarkdown files' || echo "No changes to commit"
+
+      - name: Run python build scripts
+        run: |
+          python bin/get_schedules.py
+          python bin/clean_setup_md.py
+
+      - name: Deploy the website to gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages
+          folder: "."
+          token: ${{ secrets.GITHUB_TOKEN }}
