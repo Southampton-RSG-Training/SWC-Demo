@@ -17,18 +17,18 @@ title: "SWC Demo"
 
 # Specify the location of the workshop
 # TODO: needs documenting a lot better
-venue: "FIXME"           # name of location
-address: "FIXME"         # address of location
-country: "FIXME"         # e.g. gb
-language: "FIXME"        # e.g. en
+venue: "TBC"           # name of location
+address: "TBC"         # address of location
+country: "TBC"         # e.g. gb
+language: "TBC"        # e.g. en
 latitude: "50.909698"    # latitude of location (Soton: 50.909698)
 longitude: "-1.404351"   # longitude of location (Soton: -1.404351)
 
 # Specify the start and end date of the workshop
-humandate: "FIXME"      # e.g. "6th August"
-humantime: "FIXME"      # e.g. "09:00-17:00"
-startdate: FIXME        # e.g. YYYY-MM-DD
-enddate: FIXME          # e.g. YYYY-MM-DD
+humandate: "TBC"      # e.g. "6th August"
+humantime: "TBC"      # e.g. "09:00-17:00"
+startdate: TBC        # e.g. YYYY-MM-DD
+enddate: TBC          # e.g. YYYY-MM-DD
 
 # Specify the details of the instructors and helpers
 # Can be list, or single string
@@ -58,12 +58,6 @@ lessons:
     date: 9 January 2022
     start-time: 8:30 am
 
-  # - title: Managing Academic Software Development
-  #   gh-name: project-novice
-  #   type: episode
-  #   branch: gh-pages
-  #   date: 10 January 2022
-  #   start-time: 9:30 am
 
   - title: Building Programs with Python
     gh-name: python-novice
@@ -76,32 +70,6 @@ lessons:
      - 10:00 am
      - 10:00 am
 
-  # - title: Best Practices in Data Organisation Using Spreadsheets
-  #   gh-name: spreadsheets
-  #   type: episode
-  #   branch: gh-pages
-  #   date: 13 January 2022
-  #   start-time: 15:00
-
-  # - title: Data Cleaning with OpenRefine
-  #   gh-name: openrefine-data-cleaning
-  #   type: episode
-  #   branch: gh-pages
-  #   date: 14 January 2022
-  #   start-time: 15:00
-
-  # - title: Data Analysis and Visualization in R
-  #   gh-name: r-novice
-  #   type: episode_r
-  #   branch: gh-pages
-  #   date:
-  #     - 15 January 2022
-  #     - 16 January 2022
-  #     - 17 January 2022
-  #   start-time:
-  #     - 15:00
-  #     - 15:00
-  #     - 15:00
 
 # Specify that things in the episodes collection should be output.
 collections:
