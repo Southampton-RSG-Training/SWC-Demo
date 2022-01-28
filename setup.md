@@ -14,9 +14,9 @@ specific to languages will be listed in the appropriate section(s) below.
 
 You need to download some files to follow this lesson. First, you need to open a terminal:
 
-- **On Windows:** run "Git Bash", which you installed as part of the software prerequisites
-- **On Mac OS X:** accessed by opening the “Terminal” application, which can be found in the “Utilities” folder which is in your “Applications” folder
-- **On Linux:** this will depend on the Linux distribution you are running, but you should be able to find a "Terminal" application in your desktop's application menu
+- **On Windows:** run "Git Bash", to install git bash go here [https://gitforwindows.org/](https://gitforwindows.org/) click download and select 'Git-X.XX.X-64-bit.exe' from the assets list.
+- **On Mac OS X:** accessed by opening the “Terminal” application, which can be found in the “Utilities” folder which is in your “Applications” folder.
+- **On Linux:** this will depend on the Linux distribution you are running, but you should be able to find a "Terminal" application in your desktop's application menu.
 
 Once you've done this, a window should appear. Type the following into the prompt that appears (pressing enter/return after each line):
 
@@ -43,17 +43,25 @@ Please let the instructors know if you run into any problems.
 
 #### Git Setup 
 
-{% if site.carpentry == "rsg" %}
-  {% assign slidelink = "slides/git-novice-lesson/index.html" %}
-{% else %}
-  {% assign slidelink = "../slides/index.html" %}
-{% endif %}
-
-[The slides to accompany this material can be found here.]({{ slidelink }})
+##### Windows
+To install git bash go here [https://gitforwindows.org/](https://gitforwindows.org/) click download and select 'Git-X.XX.X-64-bit.exe' from the assets list.
 Before we get started, we'll have to do a few things.
 
-![Setup](fig/slides/setup.png){:width="20%"}
+##### Mac OS
+To use Git you must install the Apple Command Line Tools.  You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
 
+- Select **Command Line Tools for Xcode 12** and click the link to download the dmg archive.
+- If prompted, choose to allow downloads from developer.apple.com
+- Open the downloaded dmg archive from the Downloads folder
+- Double-click the Command Line Tools.pkg icon to install
+
+
+{% if site.carpentry != "rsg" %}
+{% assign slidelink = "../slides/index.html" %}
+[The slides to accompany this material can be found here.]({{ slidelink }})
+{% endif %}
+
+##### GitHub
 Later on in the session, we'll be demonstrating how to share work with collaborators using GitHub. You'll need to create an account there: [https://github.com/](https://github.com/).
 
 As your GitHub user name will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
@@ -107,13 +115,15 @@ Once you're all set up, [we can start the course](git-novice-what-is-version-con
 
 IDEs: PyCharm, Spyder, VS Code
 
-We use Python 3, because it is generally the most widely used version of Python. The “Anaconda3” package provides everything Python-related you will need for the workshop. To install [Anaconda](https://www.anaconda.com/products/individual), follow the instructions below.
+We use Python 3*. The “Anaconda3” package provides everything Python-related you will need for the workshop. To install [Anaconda](https://www.anaconda.com/products/individual), follow the instructions below.
+
+Some old research projects may be in Python 2 but Python 2 has been retired and new projects should be in Python 3.
 
 ##### Windows
-Download the latest Anaconda Windows installer. Double click the installer and follow the instructions. When asked “Add Anaconda to my PATH environment variable”, answer “yes”. After it’s finished, close and reopen any open terminals to reload the updated PATH and allow the installed Python to be found.
+Download the latest Anaconda Windows installer. Double-click the installer and follow the instructions. When asked “Add Anaconda to my PATH environment variable”, answer “yes”. After it’s finished, close and reopen any open terminals to reload the updated PATH and allow the installed Python to be found.
 
 ##### Mac OS X
-Download the latest Anaconda Mac OS X installer. Double click the .pkg file and follow the instructions.
+Download the latest Anaconda Mac OS X installer. Double-click the .pkg file and follow the instructions.
 
 ##### Linux
 Download the latest Anaconda Linux Installer. Install via the terminal like this,
