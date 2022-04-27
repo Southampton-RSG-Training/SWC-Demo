@@ -1,11 +1,8 @@
 #------------------------------------------------------------
 # Values for this workshop.
 #------------------------------------------------------------
-
-# Which carpentry is this ("swc", or "rsg")?
-# swc: Software Carpentry, standard bash, python, git using the lessons from the Southampton-RSG-Training git-org
-# rsg: Custom Lessons from the Southampton-RSG-Training git-org
-carpentry: "rsg"
+# What kind of thing is this ("workshop" or "course")?
+kind: "course"
 
 # Overall title for the Workshop.
 # This variable is used to (optionally) add a title in the "jumbotron"
@@ -45,11 +42,13 @@ helper:
 # Details about the lessons
 lessons:
   - title: Automating Tasks with the Unix Shell  # Lesson title
-    gh-name: shell-novice                        # Name of the GitHub repository for the lesson at https://github:com/Southampton-RSG-Training:
+    org-name: Southampton-RSG-Training           # Name of the GitHub organisation (or individual) the lesson is in defaults to Southampton-RSG-Training
+    gh-name: shell-novice                        # Name of the GitHub repository for the lesson at https://github:com/{org-name}:
     type: episode                                # Currently only 'episode' or 'episode_r' is valid
     branch: gh-pages                             # Set the branch of the repository to use, useful for lesson customization
-    date: 8 January 2022                         # The date of the lesson
-    start-time: 10:30 am                         # The start time of the lesson
+    date: 8 January 2022                         # The date of the lesson                   # date and start-time are required for z
+    start-time: 10:30 am                         # The start time of the lesson             # 'kind: workshop'
+    order: 1                                    # The position of the lesson in the course # order is required for 'kind: course'
 
   - title: Version Control with git
     gh-name: git-novice
@@ -57,7 +56,7 @@ lessons:
     branch: gh-pages
     date: 9 January 2022
     start-time: 8:30 am
-
+    order: 2
 
   - title: Building Programs with Python
     gh-name: python-novice
@@ -67,8 +66,9 @@ lessons:
       - 11 January 2022
       - 12 January 2022
     start-time:
-     - 10:00 am
-     - 10:00 am
+      - 10:00 am
+      - 10:00 am
+    order: 3
 
 
 # Specify that things in the episodes collection should be output.
@@ -115,8 +115,8 @@ pilot: false
 # Generic settings (should not need to change).
 #------------------------------------------------------------
 
-# What kind of thing is this ("workshop" or "lesson")?
-kind: "workshop"
+# rsg: Custom Lessons from the Southampton-RSG-Training git-org
+carpentry: "rsg"
 
 # Magic to make URLs resolve both locally and on GitHub.
 # See https://help.github.com/articles/repository-metadata-on-github-pages/.
@@ -124,9 +124,7 @@ kind: "workshop"
 repository: <USERNAME>/<PROJECT>
 
 # Email address, no mailto:
-# (Don't change this -- the contact address for your workshop will be set
-# in the index.md file)
-email: "team@carpentries.org"
+email: "rsginfo@soton.ac.uk"
 
 # Using the new jekyll remote themes
 remote_theme: carpentries/carpentries-theme

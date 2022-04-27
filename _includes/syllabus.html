@@ -9,7 +9,7 @@ Days are displayed if at least one episode has 'start = true'.
 
 <div class="syllabus">
 
-    {% assign lesson_number = 0 %}
+    {% assign lesson_number = 1 %}
     {% assign day = 0 %}
     {% assign multiday = false %}
     {% for lesson_episode in lesson_episodes %}
@@ -24,7 +24,16 @@ Days are displayed if at least one episode has 'start = true'.
         {% endif %}
     {% endfor %}
 
-    {% assign current = include.start_time %}
+    {% comment %}
+        If the lesson is a workshop then we want to use the start time and check for multi day if it is a course then we
+        drop that information and just provide a running time.
+    {% endcomment %}
+    {% if site.kind == "workshop" %}
+        {% assign current = include.start_time %}
+    {% else if site.kind == "course" %}
+        {% assign current = 0 %}
+        {% assign multiday = false %}
+    {% endif %}
 
     <table class="table table-striped">
 
@@ -35,9 +44,23 @@ Days are displayed if at least one episode has 'start = true'.
                 {% assign episode = lesson_episode %}
             {% endif %}
 
+            {% comment %}
+                This is to ignore episodes that are not for the current lesson
+                given by the variable passed in by include.name
+            {% endcomment %}
+
             {% unless episode.slug contains include.name %}
                 {% continue %}
             {% endunless %}
+
+            {% comment %}
+                this avoids the schedule appearing, by not including any episodes
+                that have the "schedule" layout
+            {% endcomment %}
+
+            {% if episode.layout == "schedule" %}
+                {% continue %}
+            {% endif %}
 
             {% if episode.start %} {% comment %} Starting a new day? {% endcomment %}
                 {% assign day = day | plus: 1 %}
