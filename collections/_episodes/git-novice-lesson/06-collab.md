@@ -1,4 +1,6 @@
 ---
+lesson_title: 'Version Control with git'
+lesson_schedule_slug: git-novice-schedule
 title: "Collaborating"
 slug: git-novice-collaborating
 teaching: 55
@@ -516,9 +518,7 @@ By default, GitHub creates pull requests from any branch to ‘master’. We wan
 > > $ git pull origin dev
 > > ~~~
 > > {: .language-bash}
-> 
-{: .solution}
-
+> {: .solution}
 {: .challenge}
 
 {% include links.md %}

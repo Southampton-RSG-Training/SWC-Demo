@@ -1,4 +1,6 @@
 ---
+lesson_title: 'Automating Tasks with the Unix Shell'
+lesson_schedule_slug: shell-novice-schedule
 title: Creating Things
 slug: shell-novice-creating-things
 teaching: 15
@@ -35,14 +37,14 @@ $ pwd
 {: .language-bash}
 
 ~~~
-/Users/nelle/swc-shell-novice/test_directory
+/Users/nelle/shell-novice/shell/test_directory
 ~~~
 {: .output}
 
 If you're not in this directory, use the `cd` command to navigate to it as covered in the last lesson, for example:
 
 ~~~
-$ cd ~/swc-shell-novice/test_directory
+$ cd ~/shell-novice/shell/test_directory
 ~~~
 {: .language-bash}
 
@@ -199,7 +201,7 @@ $ pwd
 ~~~
 {: .language-bash}
 ~~~
-/Users/nelle/swc-shell-novice/test_directory/thesis
+/Users/nelle/shell-novice/test_directory/thesis
 ~~~
 {: .output}
 ~~~
@@ -217,7 +219,7 @@ $ pwd
 ~~~
 {: .language-bash}
 ~~~
-/Users/nelle/swc-shell-novice/test_directory
+/Users/nelle/shell-novice/shell/test_directory
 ~~~
 {: .output}
 
@@ -293,7 +295,7 @@ $ pwd
 ~~~
 {: .language-bash}
 ~~~
-/Users/user/swc-shell-novice/test_directory
+/Users/user/shell-novice/shell/test_directory
 ~~~
 {: .output}
 ~~~
@@ -435,9 +437,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > > without renaming, so the spelling mistake won't be fixed.
 > >
 > > Both **1** and **2** will leave you with a file called `statistics.txt` at the end, but if you use `cp` it will be a copy, and you'll still have your incorrectly-named original.
-> 
-{: .solution}
-
+> {: .solution}
 {: .challenge}
 
 > ## Moving and Copying
@@ -451,9 +451,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > /Users/jamie/data
 > ~~~
-> 
-{: .output}
-
+> {: .output}
 > ~~~
 > $ ls
 > ~~~
@@ -461,9 +459,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > proteins.dat
 > ~~~
-> 
-{: .output}
-
+> {: .output}
 > ~~~
 > $ mkdir recombine
 > $ mv proteins.dat recombine
@@ -485,9 +481,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > > and finally copied `proteins.dat` into **the directory above the current one** as `proteins-saved.dat`.
 > >
 > > So as it's in the directory above the current one (`..`), it won't show up when you do `ls` in the current directory.
-> 
-{: .solution}
-
+> {: .solution}
 {: .challenge}
 
 > ## Organizing Directories and Files
@@ -503,9 +497,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > analyzed/  fructose.dat    raw/   sucrose.dat
 > ~~~
-> 
-{: .output}
-
+> {: .output}
 >
 > The `fructose.dat` and `sucrose.dat` files contain output from her data
 > analysis. What command(s) covered in this lesson does she need to run so that the commands below will produce the output shown?
@@ -518,9 +510,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > analyzed/   raw/
 > ~~~
-> 
-{: .output}
-
+> {: .output}
 >
 > ~~~
 > $ ls analyzed
@@ -530,9 +520,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > fructose.dat    sucrose.dat
 > ~~~
-> 
-{: .output}
-
+> {: .output}
 >
 > > ## Solution
 > >
@@ -546,9 +534,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > > $ ls analyzed
 > > ~~~
 > > {: .language-bash}
-> 
-{: .solution}
-
+> {: .solution}
 {: .challenge}
 
 > ## Copy with Multiple Filenames
@@ -573,12 +559,8 @@ but it does find the copy in `thesis` that we didn't delete.
 > > ~~~
 > > citations.txt    quotations.txt
 > > ~~~
-> > 
-> {: .output}
-> 
-> 
-{: .solution}
-
+> > {: .output}
+> {: .solution}
 >
 > What does `cp` do when given three or more filenames, as in:
 >
@@ -590,9 +572,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > intro.txt    methods.txt    survey.txt
 > ~~~
-> 
-{: .output}
-
+> {: .output}
 >
 > ~~~
 > $ cp intro.txt methods.txt survey.txt
@@ -611,9 +591,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > > {: .language-bash}
 > > Will not fail even though both of the arguments are existing files - it will copy the contents
 > > of `intro.txt` *over* the contents of `methods.txt`. So be careful!
-> 
-{: .solution}
-
+> {: .solution}
 {: .challenge}
 
 {% include links.md %}

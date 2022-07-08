@@ -516,9 +516,7 @@ By default, GitHub creates pull requests from any branch to ‘master’. We wan
 > > $ git pull origin dev
 > > ~~~
 > > {: .language-bash}
-> 
-{: .solution}
-
+> {: .solution}
 {: .challenge}
 
 {% include links.md %}

@@ -11,9 +11,7 @@ slug: python-novice-challenges
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > weight = 70.5
 > age = 35
@@ -28,9 +26,7 @@ slug: python-novice-challenges
 > What does the following program print out?
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > first, second = 'Grace', 'Hopper'
 > third, fourth = second, first
@@ -59,18 +55,14 @@ slug: python-novice-challenges
 > Use slicing to access only the last four characters of a string or entries of a list.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > string_for_slicing = "Observation date: 02-Feb-2013"
 > list_for_slicing = [["fluorine", "F"], ["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
 > ~~~
 >
 >
-> 
-{: .output}
-
+> {: .output}
 > ~~~
 > "2013"
 > [["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
@@ -91,9 +83,7 @@ slug: python-novice-challenges
 > In particular, what will be the output of the following code?
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > counts = [2, 4, 6, 8, 10]
 > repeats = counts * 2
@@ -121,9 +111,7 @@ slug: python-novice-challenges
 > write a loop to print the first 3 natural numbers:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > 1
 > 2
@@ -136,9 +124,7 @@ slug: python-novice-challenges
 > Use a for-loop to convert the string "hello" into a list of letters:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > ["h", "e", "l", "l", "o"]
 > ~~~
@@ -146,9 +132,7 @@ slug: python-novice-challenges
 > Hint: You can create an empty list like this:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > my_list = []
 > ~~~
@@ -159,9 +143,7 @@ slug: python-novice-challenges
 > Exponentiation is built into Python:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > print(5 ** 3)
 > 125
@@ -189,9 +171,7 @@ slug: python-novice-challenges
 > * B and C
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > if 4 > 5:
 >     print('A')
@@ -212,9 +192,7 @@ slug: python-novice-challenges
 > explain what the rule is for which values are considered true and which are considered false.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > if '':
 >     print('empty string is true')
@@ -244,17 +222,13 @@ slug: python-novice-challenges
 > A call to your function should look like this:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > print(fence('name', '*'))
 > ~~~
 >
 >
-> 
-{: .output}
-
+> {: .output}
 > ~~~
 > *name*
 > ~~~
@@ -273,9 +247,7 @@ slug: python-novice-challenges
 > For example, what would be the output from the following:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > f = 0
 > k = 0
@@ -303,9 +275,7 @@ slug: python-novice-challenges
 > Following the function definition, a call to your function should look like this:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > is_sum_equal([1,2,3], 6))
 > True
@@ -342,9 +312,7 @@ slug: python-novice-challenges
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
@@ -365,9 +333,7 @@ slug: python-novice-challenges
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > def another_function
 >   print("Syntax errors are annoying.")
@@ -384,9 +350,7 @@ slug: python-novice-challenges
 > 3. Fix the error.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print('My favorite season is ', seasons[4])
@@ -404,9 +368,7 @@ slug: python-novice-challenges
 > 5.  What is the error message?
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > # This code has an intentional error. Do not type it directly;
 > # use it for reference to understand the error message below.
@@ -454,9 +416,7 @@ slug: python-novice-challenges
 > divided by the the square of **height in metres**.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
 >
@@ -470,9 +430,7 @@ slug: python-novice-challenges
 > ~~~
 >
 >
-> 
-{: .output}
-
+> {: .output}
 > ~~~
 > Patient's BMI is: 21.604938
 > Patient's BMI is: 21.604938
@@ -485,7 +443,7 @@ slug: python-novice-challenges
 {: .challenge}
 > #### Thin slices
 >
-> From our previous topic challenges, the expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
+> From our previous topic challenges, the expression `element[3:3]` produces an [empty string](reference.html#empty-string),
 > i.e., a string that contains no characters.
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
@@ -518,9 +476,7 @@ slug: python-novice-challenges
 > * B and C
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > if 4 > 5:
 >     print('A')

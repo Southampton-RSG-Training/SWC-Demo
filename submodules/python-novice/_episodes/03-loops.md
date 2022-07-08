@@ -225,7 +225,7 @@ e
 n
 ~~~
 
-The improved version of code for printing characters uses a [for loop](../../reference.html#for-loop)
+The improved version of code for printing characters uses a [for loop](reference.html#for-loop)
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
@@ -236,7 +236,7 @@ for variable in collection:
     do things with variable
 ~~~
 
-We can call the [loop variable](../../reference.html#loop-variable) anything we
+We can call the [loop variable](reference.html#loop-variable) anything we
 like, but there must be a colon at the end of the line starting the loop,
 and we must indent the body of the loop. Unlike many other languages, there is
 no command to end a loop (e.g. end for); what is indented after the for
@@ -366,9 +366,7 @@ so we should always use it when we can.
 > write a loop to print the first 3 natural numbers:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > 1
 > 2
@@ -388,9 +386,7 @@ so we should always use it when we can.
 > Use a for-loop to convert the string "hello" into a list of letters:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > ["h", "e", "l", "l", "o"]
 > ~~~
@@ -398,17 +394,13 @@ so we should always use it when we can.
 > Hint: You can create an empty list like this:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > my_list = []
 > ~~~
 >
 >
-> 
-{: .solution}
-
+> {: .solution}
 > > ## Solution
 > > ~~~
 > > my_list = []
@@ -423,9 +415,7 @@ so we should always use it when we can.
 > Exponentiation is built into Python:
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > print(5 ** 3)
 >125

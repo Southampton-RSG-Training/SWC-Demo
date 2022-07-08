@@ -46,7 +46,7 @@ If the test is false,
 the body of the `else` is executed instead.
 Only one or the other is ever executed:
 
-![Executing a Conditional](../fig/python-flowchart-conditional.svg)
+![Executing a Conditional](fig/python-flowchart-conditional.svg)
 
 Conditional statements don't have to necessarily include an `else`.
 If there isn't one,
@@ -145,9 +145,7 @@ In this case,
 > * B and C
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > if 4 > 5:
 >     print('A')
@@ -158,12 +156,12 @@ In this case,
 > ~~~
 >
 >
-> 
-{: .solution}
-
+> {: .solution}
 > > ## Solution
-> > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
-> > but `4 < 5` is true.
+> > B gets printed. The first condition, `4 > 5` is not true so it moves 
+> > to the next elif, but `4 <= 5` is true so that statement executes 
+> > printing B. The third condition is therefore not checked and C is 
+> > not printed.
 
 {: .challenge}
 > ## What Is Truth?
@@ -176,9 +174,7 @@ In this case,
 > explain what the rule is for which values are considered true and which are considered false.
 >
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > if '':
 >     print('empty string is true')

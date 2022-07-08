@@ -1,6 +1,8 @@
 ---
-layout: page
-title: Reference
+lesson_title: 'Building Programs with Python'
+lesson_schedule_slug: python-novice-schedule
+layout: reference
+title: "Reference"
 ---
 ## [Analyzing Patient Data](01-numpy.html)
 

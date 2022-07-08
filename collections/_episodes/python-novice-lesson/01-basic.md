@@ -1,4 +1,6 @@
 ---
+lesson_title: 'Building Programs with Python'
+lesson_schedule_slug: python-novice-schedule
 # layout: episode
 title: Python Basics
 slug: python-novice-python-basics
@@ -42,6 +44,21 @@ Python 3.4.3 |Anaconda 2.3.0 (x86_64)| (default, Mar  6 2015, 12:07:41)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ~~~
+
+{: .callout}
+~~~
+In some cases GitBash will hang on this command and not launch the Python interpreter. 
+In this case close and reopen git bash and issue the following commands:
+~~~
+
+{: .bash}
+~~~
+cd ~
+echo 'alias python="winpty python.exe"' >> .bashrc
+source .bashrc
+python
+~~~
+
 
 And lo and behold! You are presented with yet another prompt.
 So, we're actually running a Python interpreter from the shell - it's only yet another program we can run from the shell after all.
@@ -158,7 +175,7 @@ we can print several things at once by separating them with commas.
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
 
-![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
+![Variables as Sticky Notes](fig/python-sticky-note-variables-01.svg)
 
 This means that assigning a value to one variable does *not* change the values of other variables.
 For example,
@@ -176,7 +193,7 @@ print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 weight in kilograms: 57.5 and in pounds: 126.5
 ~~~
 
-![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
+![Creating Another Variable](fig/python-sticky-note-variables-02.svg)
 
 and then change `weight_kg`:
 
@@ -192,7 +209,7 @@ print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 ~~~
 
-![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
+![Updating a Variable](fig/python-sticky-note-variables-03.svg)
 
 Since `weight_lb` doesn't remember where its value came from,
 it isn't automatically updated when `weight_kg` changes.
@@ -206,9 +223,7 @@ Although we commonly refer to `variables` even in Python (because it is the comm
 > Draw diagrams showing what variables refer to what values after each statement
 > in the following program:
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > weight = 70.5
 > age = 35
@@ -225,24 +240,18 @@ Although we commonly refer to `variables` even in Python (because it is the comm
 >
 > What does the following program print out?
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > first, second = 'Grace', 'Hopper'
 > ~~~
 >
-> 
-{: .output}
-
+> {: .output}
 > ~~~
 > first = Grace
 > second = Hopper
 > ~~~
 >
-> 
-{: .python}
-
+> {: .python}
 > ~~~
 > third, fourth = second, first
 > print(third, fourth)
