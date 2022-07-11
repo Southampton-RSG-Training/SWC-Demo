@@ -216,8 +216,7 @@ def create_index_schedules(schedules):
     html += "</div>"
     html += "</div>"
 
-    # Close the main row and container
-    html += "</div>"
+    # Close the main row
     html += "</div>"
 
     with open("_includes/rsg/schedule.html", "w") as fp:
@@ -334,7 +333,7 @@ def main():
                     title = f"'{lesson_title}'"
 
                 table = f"""
-                <div class="col-md-6">
+                <div class="col">
                     <a href="{lesson_name}-schedule"><h3>{title}</h3></a>
                     <h4>{datestr}</h4>
                     <table class="table table-striped">
@@ -364,7 +363,7 @@ def main():
                 blurb = "See course schedule for lesson details"
 
             table = f"""
-                <div class="col-md-6">
+                <div class="col">
                     <a href="{lesson_name}-schedule"><h3>{lesson_title}</h3></a>
                     {blurb}
                 </div>
