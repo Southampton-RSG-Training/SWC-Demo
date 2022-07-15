@@ -12,6 +12,7 @@ kind: "workshop"
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
 title: "SWC Demo"
+form_title: "SWC+Demo" # This is required for the surveys
 
 # Email address, no mailto:
 email: "rsginfo@soton.ac.uk"
