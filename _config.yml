@@ -1,8 +1,10 @@
 #------------------------------------------------------------
 # Values for this workshop.
 #------------------------------------------------------------
-# What kind of thing is this ("workshop" or "course")?
+# What kind of thing is this ("workshop")? #Don't Change
 kind: "workshop"
+# Is this a permanent page 'static' or a taught workshop 'dated'
+delivery: "dated"
 
 # Overall title for the Workshop.
 # This variable is used to (optionally) add a title in the "jumbotron"
@@ -16,9 +18,10 @@ form_title: "SWC+Demo" # This is required for the surveys
 
 # Email address, no mailto:
 email: "rsginfo@soton.ac.uk"
+logo_site: "https://rsgsoton.net"
 
+# For static delivery this section can all be ignored ==================================================================
 # Specify the location of the workshop
-# TODO: needs documenting a lot better
 venue: "TBC"           # name of location use "online" if online
 address: "TBC"         # address of location or url of platform
 platform-name: "TBC"   # name of online platform e.g. Teams, Zoom e.t.c
@@ -44,6 +47,10 @@ instructor-email:
 helper:
   - "Helper 1"
   - "Helper 2"
+# ======================================================================================================================
+
+setup_docs:
+  - remote_desktop.md
 
 # Details about the lessons
 lessons:
@@ -51,7 +58,7 @@ lessons:
     org-name: Southampton-RSG-Training           # Name of the GitHub organisation (or individual) the lesson is in defaults to Southampton-RSG-Training
     gh-name: shell-novice                        # Name of the GitHub repository for the lesson at https://github:com/{org-name}:
     type: episode                                # Currently only 'episode' or 'episode_r' is valid
-    branch: main                             # Set the branch of the repository to use, useful for lesson customization
+    branch: main                                 # Set the branch of the repository to use, useful for lesson customization
     date: 8 January 2022                         # The date of the lesson                   # date and start-time are required for z
     start-time: 10:30 am                         # The start time of the lesson             # 'kind: workshop'
     order: 1                                    # The position of the lesson in the course # order is required for 'kind: course'
@@ -82,7 +89,6 @@ collections:
   episodes:
     output: true
     permalink: /:slug
-collections_dir: collections
 
 include:
   - _includes/rsg/
@@ -102,11 +108,6 @@ pilot: false
 # rsg: Custom Lessons from the Southampton-RSG-Training git-org
 carpentry: "rsg"
 
-# Magic to make URLs resolve both locally and on GitHub.
-# See https://help.github.com/articles/repository-metadata-on-github-pages/.
-# Please don't change it: <USERNAME>/<PROJECT> is correct.
-repository: <USERNAME>/<PROJECT>
-
 # Sites.
 amy_site: "https://amy.carpentries.org/"
 carpentries_github: "https://github.com/carpentries"
@@ -120,7 +121,6 @@ lc_site: "https://librarycarpentry.org/"
 swc_github: "https://github.com/swcarpentry"
 swc_pages: "https://swcarpentry.github.io"
 swc_site: "https://software-carpentry.org"
-rsg_site: "https://rsgsoton.net"
 template_repo: "https://github.com/carpentries/styles"
 training_site: "https://carpentries.github.io/instructor-training"
 workshop_repo: "https://github.com/carpentries/workshop-template"
@@ -170,3 +170,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache
   - jekyll-target-blank
+  - jekyll-github-metadata
