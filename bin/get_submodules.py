@@ -46,9 +46,9 @@ for n, lesson_info in enumerate(website_config['lessons']):
         #
         lesson_type = LessonType(lesson_info.get("type", None))
         if lesson_type == LessonType.markdown:
-            directory = "_episodes"
+            directory = "./_episodes"
         elif lesson_type == LessonType.r_markdown:
-            directory = "_episodes_rmd"
+            directory = "./_episodes_rmd"
         else:
             raise ValueError(f"Unknown lesson type {lesson_type}")
 
@@ -57,7 +57,7 @@ for n, lesson_info in enumerate(website_config['lessons']):
         lesson_name = lesson_info.get('gh-name', None)
         if lesson_name is None:
             raise ValueError(f"No lesson name specified for lesson {n}")
-        gh_branch = lesson_info.get('branch', 'gh-pages')
+        gh_branch = lesson_info.get('branch', 'main')
         # Check this repository exists
         r = requests.get(f'https://api.github.com/repos/{org_name}/{lesson_name}')
         if r.status_code != 200:
@@ -79,10 +79,8 @@ for n, lesson_info in enumerate(website_config['lessons']):
                 else:
                     raise f"Branch '{gh_branch}' or 'gh-pages' does not exist in '{org_name}/{lesson_name}', or 'Southampton-RSG-Training'"
 
-
-
         log.info(f"Getting lesson with parameters:\n org-name: {org_name} \n gh-name: {lesson_name} \n branch: {gh_branch} \n type: {lesson_type.value}")
-        os.system(f"git submodule add --force -b {gh_branch} https://github.com/Southampton-RSG-Training/{lesson_name}.git submodules/{lesson_name}")
+        os.system(f"git submodule add --force -b {gh_branch} https://github.com/{org_name}/{lesson_name}.git submodules/{lesson_name}")
         os.system("git submodule update --remote --merge")
 
         # move required files from the subdirectories to _includes/rsg/{lesson_name}/...
@@ -105,12 +103,12 @@ for n, lesson_info in enumerate(website_config['lessons']):
                 log.error(f"Cannot find or move submodules/{lesson_name}/{file}, but carrying on anyway")
 
         # Things to move to ./collections/... -- episodes and extras
-        dest = f"collections/{directory}/{lesson_name}-lesson"
+        dest = f"{directory}/{lesson_name}-lesson"
         Path(dest).mkdir(parents=True, exist_ok=True)
         copy_tree(f"submodules/{lesson_name}/{directory}/", dest)
         for file in ["reference.md"]:
             try:
-                dest = f"collections/{directory}/{lesson_name}-lesson"
+                dest = f"{directory}/{lesson_name}-lesson"
                 Path(dest).mkdir(parents=True, exist_ok=True)
                 copy(f"submodules/{lesson_name}/{file}", f"{dest}/{file.split('/')[-1]}")
                 log.info(f"Copied submodules/{lesson_name}/{file} to {dest}")
@@ -140,12 +138,12 @@ for n, lesson_info in enumerate(website_config['lessons']):
         # Things to move only for Rmd set up files
         if lesson_type == LessonType.r_markdown:
             # Set the destination to the lesson collection, R needs these in the 'resource path'
-            dest = f"collections/{directory}/{lesson_name}-lesson"
+            dest = f"{directory}/{lesson_name}-lesson"
             # Move the figures for this lesson
             #copy_tree(f"submodules/{lesson_name}/fig", f"{dest}/fig/")
             # Move the footer and navbar
             #Path(f"{dest}/_includes/").mkdir(parents=True, exist_ok=True)
-            #copy("_includes/workshop_footer.html", f"{dest}/_includes/")
+            #copy("_includes/footer.html", f"{dest}/_includes/")
             #copy("_includes/navbar.html", f"{dest}/_includes/")
 
 # Now need to do the same for slides, but have to do it afterwards because we

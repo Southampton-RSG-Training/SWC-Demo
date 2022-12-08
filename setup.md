@@ -1,4 +1,51 @@
-# Setup for all episodes.
+---
+title: Setup for SWC Demo
+---
+
+
+## Remote Desktop Client 
+
+In this workshop we will be using remote desktops that come pre-configured with all the
+resources you will need to complete the course. Prior to that you will need to download
+the windows remote desktop client suitable for your operating system.
+
+Link to Microsoft's website, please use the table to pick the link to the app appropriate to your system:
+Note: For Windows users this is the microsoft store.
+
+[Remote Desktop Clients](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients)
+
+The remote desktop will be available to you for the time allocated to your workshop 
+and potentially include some 'out of hours' time.
+
+During the course we will have time dedicated to helping you install the software on 
+your own computer so afterwards you can continue to use the skills you have learnt.
+
+### Connecting to your remote desktop
+
+1. Login to Microsoft Teams using your University account. 
+2. Navigate to the team (Request to join the team if you are not already a member).
+3. Register for the lab using the provided link, the registration link will be emailed and in the teams channel, register with the same account you use for Teams. You cannot proceed until you have registered.
+4. Open the Azure Lab Services tab. The labs will start and stop automatically, don't worry if it is currently stopped.
+![Azure Lab Tab](fig/setup-lab-tab.png)
+6. You need to copy your RDP information click the three dots in the lower right corner.
+![RDP Info](fig/setup-rdp-info.png)
+7. You will be prompted to copy the remote desktop information copy it to your clipboard.
+8. Open your remote desktop app that we installed earlier.
+9. Click on the + and select Add PC, paste in the RDP information. (Green highlights)
+![Add PC to RD client](fig/setup-add-RDP-to-client.png)
+10. Optionally add the user account to the PC. The username is 'lab-user' the password is 'Qwerty2000'
+
+Note: the Virtual computers will automatically start before the workshop and stop at the end. 
+If you are inactive for more than 15 minutes, they will also switch off. They can be re-started from the Lab Services Tab
+but this can take up to 5 minutes, and you may need to ask the instructor. Outside the sessions if you have been
+allocated additional time you may log in to your session and continue working.
+
+<hline/>
+## The instructions to install the software on your own computer are provided below.
+
+
+# The Bash Shell
+
 ## Text Editor ##
 
 A text editor is the piece of software you use to view and write code. If you
@@ -7,6 +54,7 @@ Notepad++ (Windows), TextEdit (macOS), Gedit (GNU/Linux), GNU Nano, Vim.
 Alternatively, there are IDE's (integrated developer environments) that have
 more features specifically for coding such as VS Code; there are also IDEs
 specific to languages will be listed in the appropriate section(s) below.
+
 ## Open a Terminal ##
 
 For this lesson, first you need to be able to open a terminal:
@@ -14,6 +62,7 @@ For this lesson, first you need to be able to open a terminal:
 - **On Windows:** run "Git Bash", to install git bash go here [https://gitforwindows.org/](https://gitforwindows.org/) click download and select 'Git-X.XX.X-64-bit.exe' from the assets list.
 - **On Mac OS X:** accessed by opening the “Terminal” application, which can be found in the “Utilities” folder which is in your “Applications” folder.
 - **On Linux:** this will depend on the Linux distribution you are running, but you should be able to find a "Terminal" application in your desktop's application menu.
+
 
 
 ## Git Setup ##
@@ -32,7 +81,7 @@ To use Git you must install the Apple Command Line Tools, this may take a few mi
 
 You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
 
-- Select **Command Line Tools for Xcode 12** and click the link to download the dmg archive.
+- Select **Command Line Tools for Xcode 12 (or higher)** and click the link to download the dmg archive.
 - If prompted, choose to allow downloads from developer.apple.com
 - Open the downloaded dmg archive from the Downloads folder
 - Double-click the Command Line Tools.pkg icon to install
@@ -48,6 +97,7 @@ $ xcode-select --install
 Git comes pre-installed on most Linux distributions. You can test if it's installed by running `git --version`. 
 If it's not installed, you can install it by running `sudo apt-get install git` or `sudo yum install git`, depending on 
 your distribution.
+
 
 ## GitHub ##
 Later on in the session, we'll be demonstrating how to share work with collaborators using [GitHub](https://github.com/). You'll need to [create an account there](https://github.com/signup). As your GitHub username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
@@ -74,9 +124,10 @@ You will need to press enter a few times to select default options, and set the 
 
 Copy the last line of output that starts with `ssh-ed25519` and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
 
-![SSH-Output](fig/SSH-Output.png){:width="50%"}
+![SSH-Output](fig/setup-SSH-Output.png){:width="50%"}
 
 Finally, go to [your Settings -> SSH keys page and add a new SSH key](https://github.com/settings/ssh/new) (you'll need to be logged into GitHub with the account you have created). Give the key a memorable name (e.g. the name of the computer you are working on) and paste the key from your clipboard into the box labelled key. Then, click **Add SSH key** and you're done!
+
 ## Download Data for Shell Lesson ##
 
 Type the following into the prompt that appears (pressing enter/return after each line):
@@ -101,6 +152,9 @@ This should download all the content for the lesson to a new directory.
 Please let the instructors know if you run into any problems.
 
 {% include links.md %}
+
+# Version Control with Git
+
 ## Download Data for Git Lesson ##
 
 Now we are ready to download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
@@ -113,6 +167,9 @@ $ git clone https://github.com/Southampton-RSG-Training/git-novice
 `cd` will move to your home directory, and `git clone` will download a copy of the materials.
 
 {% include links.md %}
+
+# Building Programs with Python
+
 ## Python Setup ##
 
 IDEs: PyCharm, Spyder, VS Code
@@ -196,6 +253,7 @@ $ bash Anaconda3-2021.11-Linux-x86_64.sh
 {: .language-bash}
 
 Answer ‘yes’ to allow the installer to initialize Anaconda3 in your .bashrc.
+
 ## Download Data for Python Lesson ##
 
 Now we are ready to download the code that we need for this lesson. Open a terminal on your machine, and enter:
